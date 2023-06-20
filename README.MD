@@ -46,6 +46,8 @@ Description=GPU Fan Control
 ExecStart=/usr/bin/python3 /path/to/autofan.py
 Restart=always
 User=root
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/yourusername/.Xauthority"
 
 [Install]
 WantedBy=multi-user.target
@@ -62,17 +64,28 @@ sudo systemctl start gpufancontrol
 ```
 
 ## 3. Allow root to connect to X server
+
 ```bash
 xhost +SI:localuser:root
 ```
-To make it permanent, Add the above line to this file below.
+To make it permanent, Add the above line to `.xinitrc` file.
 ```
 nano ~/.xinitrc
 ```
 
 
 
-## 4. Finished but you can check status with bash  
+## 4. Finished
+
+If you change anthing after you started the service.  
+You can reload the systemd daemon and restart service
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart gpufancontrol
+```
+
+You can check the service statues for any errors.
+
 ```bash
 sudo systemctl status gpufancontrol
 ```
