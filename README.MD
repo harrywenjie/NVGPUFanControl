@@ -8,7 +8,7 @@ The min(int(speed), 100) line ensures that the fan speed does not exceed 100%, e
 
 ---
 
-### 1. Edit xorg.conf
+## 1. Edit xorg.conf
 
 ```bash
 sudo nvidia-xconfig
@@ -24,7 +24,7 @@ Section "Device"
 EndSection
 ```
 
-### 2. Set it as systemd service
+## 2. Set it as systemd service
 
 find path of autofan.py , for example
 ```bash
@@ -61,7 +61,7 @@ Start the service: Start the service immediately:
 sudo systemctl start gpufancontrol
 ```
 
-### 3. Allow root to connect to X server
+## 3. Allow root to connect to X server
 ```bash
 xhost +SI:localuser:root
 ```
@@ -72,7 +72,7 @@ nano ~/.xinitrc
 
 
 
-### 4. Finished but you can check status with bash  
+## 4. Finished but you can check status with bash  
 ```bash
 sudo systemctl status gpufancontrol
 ```
