@@ -61,7 +61,7 @@ Start the service: Start the service immediately:
 sudo systemctl start gpufancontrol
 ```
 
-### 3. Finished but you can with bash  
+### 3. Finished but you can check status with bash  
 ```bash
 sudo systemctl status gpufancontrol
 ```
