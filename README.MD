@@ -61,7 +61,18 @@ Start the service: Start the service immediately:
 sudo systemctl start gpufancontrol
 ```
 
-### 3. Finished but you can check status with bash  
+### 3. Allow root to connect to X server
+```bash
+xhost +SI:localuser:root
+```
+To make it permanent, Add the above line to this file below.
+```
+nano ~/.xinitrc
+```
+
+
+
+### 4. Finished but you can check status with bash  
 ```bash
 sudo systemctl status gpufancontrol
 ```
